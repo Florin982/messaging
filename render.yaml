@@ -1,0 +1,17 @@
+# Blueprint di Render: https://render.com/docs/blueprint-spec
+services:
+  - type: web
+    name: messaging-server-client
+    runtime: python
+    plan: free
+    region: frankfurt
+    buildCommand: pip install -r requirements.txt && cd frontend && npm ci --include=dev && npm run build
+    startCommand: python -u backend/server.py
+    healthCheckPath: /healthz
+    envVars:
+      - key: SERVER_HOST
+        value: 0.0.0.0
+      - key: ADMIN_USERNAME
+        value: admin
+      - key: ADMIN_PASSWORD
+        generateValue: true

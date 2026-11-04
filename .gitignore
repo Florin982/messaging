@@ -1,0 +1,7 @@
+.venv/
+.venv-win/
+__pycache__/
+node_modules/
+dist/
+frontend/.env
+backend/client.env
