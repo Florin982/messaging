@@ -1,7 +1,7 @@
 # Blueprint di Render: https://render.com/docs/blueprint-spec
 services:
   - type: web
-    name: messaging-funny
+    name: mymessaging
     runtime: python
     plan: free
     region: frankfurt
